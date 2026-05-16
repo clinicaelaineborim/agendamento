@@ -221,8 +221,8 @@
   .sobre-img-wrap {
     border-radius:24px; overflow:hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.18);
-    aspect-ratio: 3/4;
-    position:relative;
+    width: 380px;
+    height: 500px;
   }
   .sobre-img-wrap img {
     width:100%; height:100%; object-fit:cover; object-position: center top;
@@ -664,27 +664,6 @@
 </footer>
 
 <script>
-  // Inject uploaded photo
-  const photoB64 = "INJECTED_BY_SCRIPT";
-  const imgEl = document.getElementById('sobreImg');
-
-  // Convert uploaded file to base64 and set
-  (function loadPhoto() {
-    // The image was uploaded by the user — we embed it directly
-    const userPhoto = `USERPHOTO`;
-    if (userPhoto && userPhoto !== 'USERPHOTO') {
-      imgEl.src = userPhoto;
-    } else {
-      // Fallback placeholder with initials
-      imgEl.style.display = 'none';
-      imgEl.parentElement.style.background = 'linear-gradient(145deg, #6a9e7a, #3d6b4f)';
-      imgEl.parentElement.style.display = 'flex';
-      imgEl.parentElement.style.alignItems = 'center';
-      imgEl.parentElement.style.justifyContent = 'center';
-      imgEl.parentElement.innerHTML = '<div style="font-family:Cormorant Garamond,serif;font-size:5rem;color:rgba(255,255,255,0.4);text-align:center;">EB<br><span style=\'font-size:1rem;color:rgba(255,255,255,0.7);font-style:italic;\'>Elaine Borim</span></div>';
-    }
-  })();
-
   const answers = { s1: null, s2: null, s3: null };
 
   function selectOpt(el, step) {
@@ -778,16 +757,6 @@
   window.addEventListener('load', () => { fetch(window.location.href).catch(()=>{}); });
 </script>
 
-<script>
-// Embed user photo from upload
-(function() {
-  const img = document.getElementById('sobreImg');
-  // Photo data embedded directly
-  const photoData = "data:image/jpeg;base64,__PHOTO_DATA__";
-  if (!photoData.includes('__PHOTO_DATA__')) {
-    img.src = photoData;
-  }
-})();
-</script>
+
 </body>
 </html>
